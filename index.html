@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>스와이프 갤러리</title>
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon">	
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+	<link rel="stylesheet" href="css/style.css">	
+	<script src="https://kit.fontawesome.com/c47106c6a7.js" crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</head>
+<body>	
+
+	<div class="wrap">
+		<h1>My <span>Best</span> game ever</h1>
+
+		<ul class="auto">
+			<li class="btnStart"><i class="fas fa-play"></i></li>
+			<li class="btnStop"><i class="fas fa-pause"></i></li>
+		</ul>
+
+<div class="swiper-wrapper">
+	<div class="swiper-slide">
+		<div class="inner">
+			<div class="con">
+				<img src="img/Hollowknight.jpg">
+				<h2><b>Hollow Knight</b></h2>
+				<p><span><b>T</b></span>his game features a knight's adventure to revive the Hallownest. It is a game that has been well received by many people for its cute graphics and fun gameplay. </p>
+			</div>
+		</div>
+	</div>
+	<div class="swiper-slide">
+		<div class="inner">
+			<div class="con">
+				<img src="img/Ori.jpg">
+				<h2><span><b>Ori and the Will of the Wisps</b></span></h2>
+				<p><span><b>T</b></span>he game's previous work, Ori and Blind Forest, is the first platformer game I've played. Good graphics and immersive stories are attractive.</p>
+			</div>
+		</div>
+	</div>
+	<div class="swiper-slide">
+		<div class="inner">
+			<div class="con">
+				<img src="img/RDR2.jpg">
+				<h2>Red Dead Redemption 2</h2>
+				<p><span><b>T</b></span>his game is set in the western era. The game features unrivaled graphics, good stories, and a vast open world.</p>
+			</div>
+		</div>
+	</div>
+	<div class="swiper-slide">
+		<div class="inner">
+			<div class="con">
+				<img src="img/Isaac.jpg">
+				<h2>The Binding of Isaac</h2>
+				<p><span><b>T</b></span>his is my first Roguelike game. The game was originally an easy game, but it became slightly difficult this year with the addition of a new DLC.</p>
+			</div>
+		</div>
+	</div>
+	<div class="swiper-slide">
+		<div class="inner">
+			<div class="con">
+				<img src="img/Zelda.jpg">
+				<h2>The Legend of Zelda: Breath of the Wild</h2>
+				<p><span><b>T</b></span>These Zelda series of games have been playing since I was an elementary school student. In particular, this game is made into an Openworld like my favorite The legend of Zelda: Princess of twilight.</p>
+			</div>
+		</div>
+	</div>
+	<div class="swiper-slide">
+		<div class="inner">
+			<div class="con">
+				<img src="img/Overwatch.png">
+				<h2>Overwatch</h2>
+				<p><span><b>T</b></span>his is the game I have played most consistently in my life. As such, it seems to be a great advantage that this game can be easily enjoyed.</p>
+			</div>
+		</div>
+	</div>
+	<div class="swiper-slide">
+		<div class="inner">
+			<div class="con">
+				<img src="img/Gungeon.jpg">
+				<h2>Enter the Gungeon</h2>
+				<p><span><b>T</b></span>his game is probably the game that I used the most time among indie games. So it's a really good game for me.</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+		<!-- 좌우버튼 -->
+		<div class="swiper-button-next"></div>
+		<div class="swiper-button-prev"></div>
+		
+		<!-- 페이징 버튼 -->
+		<div class="swiper-pagination"></div>
+	</div>
+
+	<script>
+		const swiper = new Swiper('.wrap',{	
+			direction: "horizontal",
+			loop: true,						
+			pagination: {
+				el: '.swiper-pagination',
+				type: 'fraction'
+			},	
+			navigation : {				
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',			
+			},
+			spaceBetween: 0,
+			slidesPerView: "auto",
+			grabCursor: true,
+			centeredSlides :true,
+			speed:1000,
+			effect:"coverflow",	
+			coverflowEffect: {
+				rotate: 50,
+				stretch: -100,
+				depth: 400,
+				modifier: 1,
+				slideShadows: false,
+			},
+			autoplay: {
+				delay:1000,		
+				disableOnInteraction : true
+			}	
+		});
+
+		// .btnStart 요소를 찾아서 btnStart에 저장
+		const btnStart = document.querySelector(".btnStart");
+		// .btnStop 요소를 찾아서 btnStop에 저장
+		const btnStop = document.querySelector(".btnStop");
+
+		//btnStart버튼을 클릭시 자동롤링 시작
+		btnStart.addEventListener("click",()=>{
+			swiper.autoplay.start();
+		});
+
+		//btnStart버튼을 클릭시 자동롤링 정지
+		btnStop.addEventListener("click",()=>{
+			swiper.autoplay.stop();
+		});
+	</script>	
+</body>
+</html>
